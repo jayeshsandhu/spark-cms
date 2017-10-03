@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+	<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> <!-- jQuery -->
+
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> <!-- Google Icons Link -->
+
+	<title>Spark Agency CRM</title>
+</head>
+<body>
+
+	<div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+		<header class="mdl-layout__header">
+			<div class="mdl-layout__header-row">
+				<div class="mdl-layout-spacer"></div>
+				<a class="mdl-navigation__link" href="">My Profile</a>
+				<a class="mdl-navigation__link" href="">Settings</a>
+				<div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right">
+					<label class="mdl-button mdl-js-button mdl-button--icon"
+					for="fixed-header-drawer-exp">
+					<i class="material-icons">search</i>
+				</label>
+				<div class="mdl-textfield__expandable-holder">
+					<input class="mdl-textfield__input" type="text" name="sample" id="fixed-header-drawer-exp">
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<!-- Sidebar Menu -->
+
+	<div class="mdl-layout__drawer">
+		<span class="mdl-layout-title">Your Company CRM</span>
+		<nav class="mdl-navigation">
+			<a class="mdl-navigation__link" href=""> 
+				<!-- For modern browsers. -->
+				<i class="material-icons">web</i>
+				<!-- For IE9 or below. --> 
+				<!-- <i class="material-icons">&#xE051;</i> -->
+				Pages</a>
+				<a class="mdl-navigation__link" href="">Events</a>
+				<a type='button' class="mdl-navigation__link" href="#" id="profiles">Profiles</a>
+				<!-- <button type='button'  class="mdl-navigation__link" id="profiles">Profiles</button>  -->
+				<a class="mdl-navigation__link" href="">Link</a>
+			</nav>
+		</div>
+		<main class="mdl-layout__content">
+			<div class="page-content" id="content_inload">
+
+				<!-- Your content goes here -->
+				<!-- Mainpage Content -->
+				<main>
+					<div class="mdl-grid">
+
+						<div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+							<div class="mdl-card__title">
+								<h2 class="mdl-card__title-text">Welcome</h2>
+							</div>
+							<div class="mdl-card__supporting-text">
+								Auckland Sky Tower, taken March 24th, 2014
+							</div>
+							<div class="mdl-card__supporting-text">
+								The Sky Tower is an observation and telecommunications tower located in Auckland,
+								New Zealand. It is 328 metres (1,076 ft) tall, making it the tallest man-made structure
+								in the Southern Hemisphere.
+							</div>
+						</div>
+
+
+						<!-- <div class="mdl-cell mdl-cell--4-col">4</div>
+						<div class="mdl-cell mdl-cell--4-col">4</div> -->
+					</div>
+				</main>
+
+			</div>
+		</main>
+	</div>
+
+	<!-- Sidebar Menu -->
+
+</body>
+
+<script>
+	
+	$("#profiles").click(function() {
+		$("#content_inload").load('profiles.html');
+	});
+
+</script>
+</html>
