@@ -37,14 +37,10 @@
 	<div class="mdl-layout__drawer">
 		<span class="mdl-layout-title">Your Company CRM</span>
 		<nav class="mdl-navigation">
-			<a class="mdl-navigation__link" href=""> 
-				<!-- For modern browsers. -->
-				<i class="material-icons">web</i>
-				<!-- For IE9 or below. --> 
-				<!-- <i class="material-icons">&#xE051;</i> -->
+			<a type='button' class="mdl-navigation__link" href="#" id="pages"><i class="material-icons">web</i>
 				Pages</a>
-				<a class="mdl-navigation__link" href="">Events</a>
-				<a type='button' class="mdl-navigation__link" href="#" id="profiles">Profiles</a>
+				<a type='button' class="mdl-navigation__link" href="#" id="events"><i class="material-icons">event</i>Events</a>
+				<a type='button' class="mdl-navigation__link" href="#" id="profiles"><i class="material-icons">people_outline</i>Profiles</a>
 				<!-- <button type='button'  class="mdl-navigation__link" id="profiles">Profiles</button>  -->
 				<a class="mdl-navigation__link" href="">Link</a>
 			</nav>
@@ -54,28 +50,7 @@
 
 				<!-- Your content goes here -->
 				<!-- Mainpage Content -->
-				<main>
-					<div class="mdl-grid">
-
-						<div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
-							<div class="mdl-card__title">
-								<h2 class="mdl-card__title-text">Welcome</h2>
-							</div>
-							<div class="mdl-card__supporting-text">
-								Auckland Sky Tower, taken March 24th, 2014
-							</div>
-							<div class="mdl-card__supporting-text">
-								The Sky Tower is an observation and telecommunications tower located in Auckland,
-								New Zealand. It is 328 metres (1,076 ft) tall, making it the tallest man-made structure
-								in the Southern Hemisphere.
-							</div>
-						</div>
-
-
-						<!-- <div class="mdl-cell mdl-cell--4-col">4</div>
-						<div class="mdl-cell mdl-cell--4-col">4</div> -->
-					</div>
-				</main>
+				
 
 			</div>
 		</main>
@@ -86,10 +61,45 @@
 </body>
 
 <script>
+
+
+	// Sidebar Navigation link functions
+
+	$("#pages").click(function() {
+		$("#content_inload").load('pages.php');
+		sessionStorage.setItem("indexPage","pages.php");
+	});
+
 	
 	$("#profiles").click(function() {
-		$("#content_inload").load('profiles.html');
+		$("#content_inload").load('profiles.php');
+		sessionStorage.setItem("indexPage","profiles.php");
 	});
+
+	$("#events").click(function() {
+		$("#content_inload").load('events.php');
+		sessionStorage.setItem("indexPage","events.php");
+		console.log('INDEX SET events.php');
+	});
+
+
+	// On load javascript functions
+	
+	$("document").ready(function(session_index) {
+		if (sessionStorage.getItem("indexPage")) {
+			var session_index = sessionStorage.getItem("indexPage");
+			console.log('INDEX GOT'+ session_index);
+			$("#content_inload").load(session_index);	
+	}
+	else{
+		sessionStorage.setItem("indexPage","pages.php");
+			var session_index = sessionStorage.getItem("indexPage")
+			console.log('INDEX SET' + session_index);
+			$("#content_inload").load(session_index);
+	}
+	});
+
+
 
 </script>
 </html>
