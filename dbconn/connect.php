@@ -3,7 +3,7 @@ date_default_timezone_set('Australia/Brisbane');
 
 $servername = "localhost";
 $username = "public";
-$password = "Wozniak125!";
+$password = "Example Password";
 $dbname = "cms";
 
 // Create connection
